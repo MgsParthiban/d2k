@@ -1,0 +1,25 @@
+name: "cicd for DotNet"
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET # Sets up the .NET environment.
+      uses: actions/setup-dotnet@v3
+      with: 
+        dotnet-version: '8.0.x'
+    
+    - name: Restore Dependencies
+      run: dotnet restore
+    
+    - name: Build Application
+      run: dotnet build --configuration Release
+
