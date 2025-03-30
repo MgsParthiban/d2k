@@ -2,7 +2,7 @@ name: "cicd for DotNet"
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   build:
