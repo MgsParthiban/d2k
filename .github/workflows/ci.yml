@@ -19,15 +19,7 @@ jobs:
     
     - name: Restore Dependencies
       run: dotnet restore
-    
-    - name: Build Application
-      run: dotnet build --configuration Release
-    - name: Install .NET Core 2.0
-      run: |
-        wget https://dotnetcli.azureedge.net/dotnet/Core2.0.9/dotnet-runtime-2.0.9-linux-x64.tar.gz
-        mkdir -p $HOME/dotnet && tar zxf dotnet-runtime-2.0.9-linux-x64.tar.gz -C $HOME/dotnet
-        export DOTNET_ROOT=$HOME/dotnet
-        export PATH=$HOME/dotnet:$PATH
+  
 
 
     - name: Publish Application
